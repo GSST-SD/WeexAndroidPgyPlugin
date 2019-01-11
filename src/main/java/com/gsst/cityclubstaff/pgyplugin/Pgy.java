@@ -7,6 +7,7 @@ import android.util.Log;
 import com.alibaba.weex.plugin.annotation.WeexModule;
 import com.taobao.weex.annotation.JSMethod;
 //import com.taobao.weex.bridge.JSCallback;
+import com.taobao.weex.bridge.JSCallback;
 import com.taobao.weex.common.WXModule;
 
 //import com.pgyersdk.crash.PgyCrashManager;
@@ -22,7 +23,7 @@ public  class Pgy extends WXModule {
     private static final String TAG = Pgy.class.getSimpleName();
 
     @JSMethod
-    public void checkUpdate(){
+    public void checkUpdate(String appId, final JSCallback jsCallback){
         Log.d(TAG, "pgyupdate checkUpdate ");
         new PgyUpdateManager.Builder()
 //            .setForced(true)                //设置是否强制提示更新
